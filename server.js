@@ -66,6 +66,9 @@ app.get('/hai', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'hai.html'));
 });
 
+app.get('/dropdown', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'dropdown.html'));
+});
 
 app.get('/article-one', function(req,res) {
    res.send(createTemplate(articleOne)); 
