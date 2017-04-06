@@ -1,20 +1,21 @@
 <html>
     <head><title>cool</title>
     <style>
-.body {
-background: url(ui/Free-Download-Background-Images-For-Website-Design-4.jpg); /*You will specify your image path here.*/
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
 
--moz-background-size: cover;
--webkit-background-size: cover;
-background-size: cover;
-background-position: top center !important;
-background-repeat: no-repeat !important;
-background-attachment: fixed;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
+
 </style>
 </head>
     <body>
-        <h1 style="color:#ffff00">hai welcome to this page</h1>
+        <img src="ui/Free-Download-Background-Images-For-Website-Design-4.jpg" id="bg" alt="">
+        <h1 style="color:#aaaa00">hai welcome to this page</h1>
         <a href="/dropdown">click here</a>
     </body>
 </html>
