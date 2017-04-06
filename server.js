@@ -91,6 +91,10 @@ app.get('/ui/Free-Download-Background-Images-For-Website-Design-4.jpg', function
   res.sendFile(path.join(__dirname, 'ui', 'Free-Download-Background-Images-For-Website-Design-4.jpg'));
 });
 
+app.get('/ui/Website-Design-Background.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Website-Design-Background.png'));
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
