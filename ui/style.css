@@ -67,11 +67,6 @@ body {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-.div {
-    width: 150px;
-    height: 150px;
-    overflow: scroll;
-}
 
 .html
 {
