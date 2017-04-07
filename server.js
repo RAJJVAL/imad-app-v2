@@ -95,6 +95,11 @@ app.get('/ui/Website-Design-Background.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Website-Design-Background.png'));
 });
 
+app.get('/ui/Deep-into-soul-electro-lounge-track.mp3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Deep-into-soul-electro-lounge-track.mp3'));
+});
+
+
 app.get('/ui/ally-media-group-home-8.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'ally-media-group-home-8.jpg'));
 });
