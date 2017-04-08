@@ -92,8 +92,20 @@ app.get('/dropdown', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'dropdown.html'));
 });
 
-app.get('/article-one', function(req,res) {
-   res.send(createTemplate(articleOne)); 
+app.get('/article/:articleName', function(req,res) {
+   
+   pool.query("SELECT * FROM article WHERE title = " + req.params.articleName, function(err,result){
+       if(err){
+           res.status(500).send(err.toString());
+       }else{
+           if(result.rows.length === 0 ){
+               res.status(404).send('Article not fond'); 
+           }else{
+               var articleData = result.rows[0];
+       res.send(createTemplate(articleData)); 
+           }
+       }
+   } );
 });
 
 app.get('/article-two', function(req,res) {
