@@ -125,7 +125,7 @@ app.post('\login', function(req,res){
              var hashedPassword = hash(password,salt);
              
              if(hashedPassword === dbString){
-                 req.session.outh={userId: result.rowa[0].id};
+                 req.session.auth={userId: result.rowa[0].id};
              res.send('credentials correct!');
          }else{
              res.send(403).send('username/password is invalid');
@@ -133,6 +133,14 @@ app.post('\login', function(req,res){
      }
      }   
     });
+});
+
+app.get('/check-login',function(req,res){
+   if(req.session && req.session.auth && req.session.auth.userId){
+       req.send('you are logged in:' + req.session.auth.userId.toString());
+   } else{
+       res.send('You are not logged in');
+   }
 });
 
 
