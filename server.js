@@ -92,6 +92,11 @@ app.get('/dropdown', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'dropdown.html'));
 });
 
+app.get('/mainpage', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'mainpage.html'));
+});
+
+
 app.get('/article/:articleName', function(req,res) {
    
    pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'" , function(err,result){
