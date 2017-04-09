@@ -4,6 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var config = {
     user:'rajjval',
@@ -15,6 +16,10 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'someRandomSecretValue',
+    Cookie: {maxAge: 1000*60*60*24*30}
+}));
 
 var articleOne= {
   title:'Article One | Rajjval Jain',
@@ -88,7 +93,6 @@ app.get('/hash/:input', function(req,res){
 app.post('/create-user', function(req,res){
     var username = req.body.username;
     var password = req.body.password;
-    var salt = crypto.RandomBytes(128).toString('hex'); 
     var dbString = hash(passoword,salt);
     pool.query('INSERT INTO "user" (usrername,password) VALUES ($1, $2)',[username,dbString],function(err, result){
       if(err)
@@ -118,7 +122,9 @@ app.post('\login', function(req,res){
              var dbString = result.rows[0].password;
              var slat = dbString.split('$')[2];
              var hashedPassword = hash(password,salt);
+             
              if(hashedPassword === dbString){
+                 req.session.outh={userId: result.rowa[0].id;
              res.send('credentials correct!');
          }else{
              res.send(403).send('username/password is invalid');
