@@ -86,13 +86,13 @@ var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
 
 
 app.get('/hash/:input', function(req,res){
-   var hashedString = hash(req.params.input, 'this-is-some-random-string');
    res.send(hashedString);
 });
 
 app.post('/create-user', function(req,res){
     var username = req.body.username;
     var password = req.body.password;
+    var salt = crypto.RandomBytes(128).toString('hex'); 
     var dbString = hash(passoword,salt);
     pool.query('INSERT INTO "user" (usrername,password) VALUES ($1, $2)',[username,dbString],function(err, result){
       if(err)
@@ -124,7 +124,7 @@ app.post('\login', function(req,res){
              var hashedPassword = hash(password,salt);
              
              if(hashedPassword === dbString){
-                 req.session.outh={userId: result.rowa[0].id;
+                 req.session.outh={userId: result.rowa[0].id};
              res.send('credentials correct!');
          }else{
              res.send(403).send('username/password is invalid');
