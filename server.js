@@ -201,24 +201,24 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/ui/Free-Download-Background-Images-For-Website-Design-4.jpg', function (req, res) {
+app.get('/Free-Download-Background-Images-For-Website-Design-4.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Free-Download-Background-Images-For-Website-Design-4.jpg'));
 });
 
-app.get('/ui/Website-Design-Background.png', function (req, res) {
+app.get('/Website-Design-Background.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Website-Design-Background.png'));
 });
 
-app.get('/ui/Deep-into-soul-electro-lounge-track.mp3', function (req, res) {
+app.get('/Deep-into-soul-electro-lounge-track.mp3', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Deep-into-soul-electro-lounge-track.mp3'));
 });
 
 
-app.get('/ui/ally-media-group-home-8.jpg', function (req, res) {
+app.get('/ally-media-group-home-8.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'ally-media-group-home-8.jpg'));
 });
 
-app.get('/ui/madi.png', function (req, res) {
+app.get('/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
