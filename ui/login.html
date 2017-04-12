@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Login page</title>
+<style>
+li{
+float:left;
+padding:14px 20px;
+}
+
+</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+</head>
+
+<body background="C:\Users\User\Desktop\web\images\cool.jpg">
+
+ <font color="white”><center><b><h1>Hi, welcome to my login page</h1></b><center></font>
+        <font color="white"><center><h1>Simple Login Page</h1></font>
+        <form name="login">
+
+            <font color="black"><center><b><H1>Username<tb><input type="text" name="userid"style="background:#bfbfbf;color:#212121;border-color:#212121;" onFocus="this.style.background = '#ffffff';" onBlur="this.style.background = '#bfbfbf';"/></H1><b></center></font>
+     
+       <font color="blsck"><center><b><H1>Password&nbsp;<input type="password" name="pswrd"style="background:#bfbfbf;color:#212121;border-color:#212121;" onFocus="this.style.background = '#ffffff';" onBlur="this.style.background = '#bfbfbf';"/></H1><b></center></font>
+
+            <center><input type="button" onclick="check(this.form)" value="Login"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Cancel"/></center>
+        </form>
+        <script language="javascript">
+            function check(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+                if(form.userid.value == "shashank" && form.pswrd.value == "cool") {
+                    window.open('mainpage.html')/*opens the target page while Id & password matches*/
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
+        </script>
+
+
+</body>
+
+</html>
