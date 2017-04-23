@@ -169,6 +169,10 @@ app.get('/hai', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'hai.html'));
 });
 
+app.get('/News', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'News.html'));
+});
+
 app.get('/dropdown', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'dropdown.html'));
 });
