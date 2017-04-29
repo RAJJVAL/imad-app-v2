@@ -219,6 +219,11 @@ app.get('/Website-Design-Background.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Website-Design-Background.png'));
 });
 
+app.get('/New.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'New.png'));
+});
+
+
 app.get('/Deep-into-soul-electro-lounge-track.mp3', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Deep-into-soul-electro-lounge-track.mp3'));
 });
